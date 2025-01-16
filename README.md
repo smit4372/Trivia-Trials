@@ -57,13 +57,15 @@
 ```
 Trivia Trials/
 ├── README.md                # Game documentation
-├── trivia_trials.cpp        # Main game source code
+├── src/
+│   └── main.cpp             # Main game source code
 ├── questions/               # Folder containing question files
 │   ├── question1.txt
 │   ├── question2.txt
 │   └── ...
-├── Makefile (optional)      # For easy compilation (if included)
-└── assets/ (optional)       # Additional resources (if applicable)
+├── .gitattributes
+└── .gitignore
+
 ```
 
 - **`questions/`**: Contains individual text files for each question. Each file includes:
