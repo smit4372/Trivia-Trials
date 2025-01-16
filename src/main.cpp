@@ -69,20 +69,18 @@ void positivePoints(){
     }
 }
 
+void question::readQuestionFromFile(int z) {
+    string filePath = "questions/question" + to_string(z) + ".txt"; // Updated path
+    ifstream qFile(filePath);
 
-void question::readQuestionFromFile(int z){
-    int temp;
-    
-    ifstream qFile("question"+ to_string(z) +".txt");
-    if(qFile.is_open()){
-        getline(qFile, question);
-    }
-    if(qFile.good()){
-        
-        for(int i = 0; i<4; i++){
-            getline(qFile, choice[i]);
+    if (qFile.is_open()) {
+        getline(qFile, question); // Read the question
+        for (int i = 0; i < 4; i++) {
+            getline(qFile, choice[i]); // Read choices
         }
-        getline(qFile, theCorrectChoice);
+        getline(qFile, theCorrectChoice); // Read the correct answer
+    } else {
+        cerr << "Error: Unable to open file " << filePath << endl;
     }
 }
 
